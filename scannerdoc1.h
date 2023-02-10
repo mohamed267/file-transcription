@@ -6,4 +6,5 @@
 #define MINUS 6
 #define NEWLINE 7
 #define COMMENT 8
-
+#define REAL 9
+#define INT 10

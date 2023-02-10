@@ -13,7 +13,30 @@ int main (void){
     ntoken = yylex();
 
     while(ntoken){
-        printf("%d% \n" ,  ntoken);
+
+        switch(ntoken){
+            case COLON :
+                ntoken = yylex();
+                if(ntoken == INT){
+                    printf("negative integer");
+                }
+
+                break;
+
+            
+            case INT : 
+                printf("positive integer");
+
+                break;
+            
+            case REAL :  
+                printf("real");
+
+                break;
+            
+
+        }
+
         
         // vtoken = yylex();
         ntoken = yylex();
@@ -21,6 +44,16 @@ int main (void){
 
     return 0;
 }
+
+
+// " " {return BLANC;}
+// "\n" {return  NEWLINE;}
+// [a-zA-Z0-9]+  { 
+//     return CHAR;
+// }
+
+
+// \/\*|(.|\n)*\*\/ {return COMMENT;}
 
 
 

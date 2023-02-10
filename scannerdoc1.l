@@ -5,12 +5,16 @@
 character [a-z] ;
 
 %%
-" " {return BLANC;}
-"\n" {return  NEWLINE;}
-[a-zA-Z0-9]+  { 
-    return CHAR;
+"-" {
+    return COLON;
 }
-\/\*([.\n]+)\*\/ {return COMMENT;}
+[1-9][0-9]*[.][0-9]*[1-9] {
+    return REAL;
+}
+
+[1-9][0-9]* {
+    return INT;
+}
 %%
 
 
