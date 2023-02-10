@@ -21,10 +21,11 @@ int main (int argc , char *  argv[]){
 
     //     yyin = input_file;
     // }
+    fprintf(fdoc2 , "%s" , "@");
 
     while(ntoken){
         
-        printf("%d \n" , ntoken);
+        
 
         
         switch(ntoken){
@@ -59,7 +60,7 @@ int main (int argc , char *  argv[]){
                 fprintf(fdoc2 , "%s" , " " );
                 break;
             case NEWLINE :
-                fprintf(fdoc2 , "%s" , "\n" );
+                fprintf(fdoc2 , "%s" , "\n@" );
                 break;
             
 
