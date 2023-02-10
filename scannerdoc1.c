@@ -1,59 +1,95 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "scannerdoc1.h"
 
 extern int yylex();
 extern int  yylineno;
 extern char * yytext;
 
-char *names[] = {NULL , "db_type", "db_name" , "db_table_prefix" , "db_port"};
 
 
-int main (void){
+int main (int argc , char *  argv[]){
+    FILE *input_file ;
+    FILE *fdoc2;
     int ntoken , vtoken;
     ntoken = yylex();
 
-    while(ntoken){
+    fdoc2 = fopen("doc2.txt" , "w");
 
+    // if(argc > 1){
+    //     input_file =  fopen(argv[2], "r");
+
+    //     yyin = input_file;
+    // }
+
+    while(ntoken){
+        
+        printf("%d \n" , ntoken);
+
+        
         switch(ntoken){
-            case COLON :
+            case MINUS :
                 ntoken = yylex();
                 if(ntoken == INT){
-                    printf("negative integer");
+                    fprintf(fdoc2 , "%d" , -atoi(yytext) - 3 );
                 }
+
+
+                fprintf(fdoc2 , "%s" , "");
+
+
 
                 break;
 
             
             case INT : 
-                printf("positive integer");
-
+                fprintf(fdoc2 , "%d" , atoi(yytext) + 3 );
                 break;
             
             case REAL :  
-                printf("real");
-
+                fprintf(fdoc2 , "%s" , yytext );
+                break;
+            case COMMENT :  
+                fprintf(fdoc2 , "%s" , yytext );
+                break;
+            case WORD :  
+                fprintf(fdoc2 , "%s" , "" );
+                break;
+            case BLANC :          
+                fprintf(fdoc2 , "%s" , " " );
+                break;
+            case NEWLINE :
+                fprintf(fdoc2 , "%s" , "\n" );
                 break;
             
 
         }
 
-        
-        // vtoken = yylex();
+
         ntoken = yylex();
+        
     }
 
     return 0;
 }
 
 
-// " " {return BLANC;}
-// "\n" {return  NEWLINE;}
-// [a-zA-Z0-9]+  { 
-//     return CHAR;
+
+
+// ^"/*"|(.|\n)*"*/" {
+    
 // }
 
 
-// \/\*|(.|\n)*\*\/ {return COMMENT;}
+
+
+
+
+
+
+
+
+
 
 
 

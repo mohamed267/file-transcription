@@ -1,4 +1,4 @@
-#define CHAR 1
+#define WORD 1
 #define DIGIT 2
 #define BLANC 3
 #define COLON 4
@@ -8,3 +8,4 @@
 #define COMMENT 8
 #define REAL 9
 #define INT 10
+#define NOTHING 11
