@@ -9,21 +9,13 @@ public interface TRANSBConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int AT = 1;
+  int REEL = 1;
   /** RegularExpression Id. */
-  int PLUS = 2;
+  int ENTIER = 2;
   /** RegularExpression Id. */
-  int MINUS = 3;
+  int COMMENT = 3;
   /** RegularExpression Id. */
-  int COMMA = 4;
-  /** RegularExpression Id. */
-  int INT = 5;
-  /** RegularExpression Id. */
-  int REAL = 6;
-  /** RegularExpression Id. */
-  int COMMENT = 7;
-  /** RegularExpression Id. */
-  int WORD = 8;
+  int CHIFFRE = 4;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -31,14 +23,11 @@ public interface TRANSBConstants {
   /** Literal token values. */
   String[] tokenImage = {
     "<EOF>",
-    "\"@\"",
-    "\"+\"",
-    "\"-\"",
-    "\",\"",
-    "<INT>",
-    "<REAL>",
+    "<REEL>",
+    "<ENTIER>",
     "<COMMENT>",
-    "<WORD>",
+    "<CHIFFRE>",
+    "\"@\"",
     "\"\\n\"",
   };
 
