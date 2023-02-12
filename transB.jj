@@ -20,7 +20,6 @@ public class TRANSB {
 
   public static void main(String[] args) throws ParseException, IOException {
     File inputFile = new File("doc2.txt");
-    FileWriter fw = new FileWriter("doc3.txt");
     FileReader reader = new FileReader(inputFile);
 
     TRANSB parser = new TRANSB(reader);
@@ -51,7 +50,7 @@ PARSER_END(TRANSB)
 
 TOKEN : {
   < REEL: <ENTIER>","(<CHIFFRE>)+ >
-  | < ENTIER: ("-")?(<CHIFFRE>)+ >
+  | < ENTIER: ("-"|"-")?(<CHIFFRE>)+ >
   | < COMMENT: "/*"(~[]|"\n")*"*/" >
   | <#CHIFFRE: ["0"-"9"] >
 

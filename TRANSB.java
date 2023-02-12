@@ -15,7 +15,6 @@ public class TRANSB implements TRANSBConstants {
 
   public static void main(String[] args) throws ParseException, IOException {
     File inputFile = new File("doc2.txt");
-    FileWriter fw = new FileWriter("doc3.txt");
     FileReader reader = new FileReader(inputFile);
 
     TRANSB parser = new TRANSB(reader);

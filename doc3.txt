@@ -1,0 +1,101 @@
+Call:   TextDoc2
+  Call: EnsembleLignes
+    Call:       MultilignesValides
+      Call:     LigneValide
+        Consumed token: <"@" at line 1 column 1>
+        Call:   Contenuligne
+          Call: Mots
+            Consumed token: <<REEL>: "5,555" at line 1 column 2>
+          Return: Mots
+          Call: SerieMots
+          Return: SerieMots
+        Return: Contenuligne
+        Consumed token: <"\n": "\n" at line 1 column 7>
+      Return: LigneValide
+      Call:     SuitMultiligne
+        Call:   MultilignesValides
+          Call: LigneValide
+            Consumed token: <"@" at line 2 column 1>
+            Call:       Contenuligne
+              Call:     Mots
+                Consumed token: <<ENTIER>: "47" at line 2 column 2>
+              Return: Mots
+              Call:     SerieMots
+              Return: SerieMots
+            Return: Contenuligne
+            Consumed token: <"\n": "\n" at line 2 column 4>
+          Return: LigneValide
+          Call: SuitMultiligne
+            Call:       MultilignesValides    
+              Call:     LigneValide
+                Consumed token: <"@" at line 3 column 1>
+                Call:   Contenuligne
+                  Call: Mots
+                    Consumed token: <<ENTIER>: "4" at line 3 column 2>
+                  Return: Mots
+                  Call: SerieMots
+                  Return: SerieMots
+                Return: Contenuligne
+                Consumed token: <"\n": "\n" at line 3 column 3>
+              Return: LigneValide
+              Call:     SuitMultiligne        
+                Call:   MultilignesValides    
+                  Call: LigneValide
+                    Consumed token: <"@" at line 4 column 1>
+                    Call:       Contenuligne  
+                      Call:     Mots
+                        Consumed token: <<ENTIER>: "8" at line 4 column 2>
+                      Return: Mots
+                      Call:     SerieMots     
+                      Return: SerieMots       
+                    Return: Contenuligne      
+                    Consumed token: <"\n": "\n" at line 4 column 3>
+                  Return: LigneValide
+                  Call: SuitMultiligne        
+                    Call:       MultilignesValides
+                      Call:     LigneValide   
+                        Consumed token: <"@" at line 5 column 1>
+                        Call:   Contenuligne  
+                          Call: Mots
+                            Consumed token: <<ENTIER>: "6" at line 5 column 2>
+                          Return: Mots        
+                          Call: SerieMots     
+                          Return: SerieMots   
+                        Return: Contenuligne  
+                        Consumed token: <"\n": "\n" at line 5 column 3>
+                      Return: LigneValide     
+                      Call:     SuitMultiligne
+                        Call:   MultilignesValides
+                          Call: LigneValide   
+                            Consumed token: <"@" at line 6 column 1>
+                            Call:       Contenuligne
+                              Call:     Mots
+                                Consumed token: <<ENTIER>: "-58" at line 6 column 2>        
+                              Return: Mots    
+                              Call:     SerieMots
+                              Return: SerieMots
+                            Return: Contenuligne
+                            Consumed token: <"\n": "\n" at line 6 column 5>
+                          Return: LigneValide 
+                          Call: SuitMultiligne
+                          Return: SuitMultiligne
+                        Return: MultilignesValides
+                      Return: SuitMultiligne  
+                    Return: MultilignesValides
+                  Return: SuitMultiligne      
+                Return: MultilignesValides
+              Return: SuitMultiligne
+            Return: MultilignesValides        
+          Return: SuitMultiligne
+        Return: MultilignesValides
+      Return: SuitMultiligne
+    Return: MultilignesValides
+    Call:       SuitEnsble
+      Call:     EnsembleLignes
+        Consumed token: <<COMMENT>: "/*comentaire commentaire \nline 2*/\n/* text here */" at line 7 column 1>
+        Call:   SuitEnsble
+        Return: SuitEnsble
+      Return: EnsembleLignes
+    Return: SuitEnsble
+  Return: EnsembleLignes
+Return: TextDoc2

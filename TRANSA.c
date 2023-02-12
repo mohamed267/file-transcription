@@ -47,11 +47,11 @@ int main (int argc , char *  argv[]){
             case PLUS :
                 ntoken = yylex();
                 if(ntoken == INT){
-                    fprintf(fdoc2 , "@+%d\n" , atoi(yytext) + 3 );
+                    fprintf(fdoc2 , "@%d\n" , atoi(yytext) + 3 );
                 }
 
                 if(ntoken == REAL){
-                    fprintf(fdoc2 , "@+%s\n" , yytext);
+                    fprintf(fdoc2 , "@%s\n" , yytext);
                 }
 
 
