@@ -8,6 +8,10 @@
     return MINUS;
 }
 
+"+" {
+    return PLUS;
+}
+
 " " {
     return BLANC;
 }
@@ -15,11 +19,11 @@
     return NEWLINE;
 }
 
-[0-9]*[a-zA-Z][a-zA-Z0-9]*  { 
+[0-9]*[+\-,]*[a-zA-Z][+\-,a-zA-Z0-9]*  { 
     return WORD;
 }
 
-[1-9][0-9]*[.][0-9]*[1-9] {
+[1-9][0-9]*","[0-9]*[1-9] {
     return REAL;
 }
 

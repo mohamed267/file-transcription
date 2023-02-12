@@ -21,7 +21,7 @@ int main (int argc , char *  argv[]){
 
     //     yyin = input_file;
     // }
-    fprintf(fdoc2 , "%s" , "@");
+    fprintf(fdoc2 , "%s" , "");
 
     while(ntoken){
         
@@ -32,7 +32,26 @@ int main (int argc , char *  argv[]){
             case MINUS :
                 ntoken = yylex();
                 if(ntoken == INT){
-                    fprintf(fdoc2 , "%d" , -atoi(yytext) - 3 );
+                    fprintf(fdoc2 , "@%d\n" , -atoi(yytext) - 3 );
+                }
+                if(ntoken == REAL){
+                    fprintf(fdoc2 , "@%s\n" , yytext);
+                }
+
+
+                fprintf(fdoc2 , "%s" , "");
+
+
+
+                break;
+            case PLUS :
+                ntoken = yylex();
+                if(ntoken == INT){
+                    fprintf(fdoc2 , "@+%d\n" , atoi(yytext) + 3 );
+                }
+
+                if(ntoken == REAL){
+                    fprintf(fdoc2 , "@+%s\n" , yytext);
                 }
 
 
@@ -44,23 +63,23 @@ int main (int argc , char *  argv[]){
 
             
             case INT : 
-                fprintf(fdoc2 , "%d" , atoi(yytext) + 3 );
+                fprintf(fdoc2 , "@%d\n" , atoi(yytext) + 3 );
                 break;
             
             case REAL :  
-                fprintf(fdoc2 , "%s" , yytext );
+                fprintf(fdoc2 , "@%s\n" , yytext );
                 break;
             case COMMENT :  
-                fprintf(fdoc2 , "%s" , yytext );
+                fprintf(fdoc2 , "%s\n" , yytext );
                 break;
             case WORD :  
                 fprintf(fdoc2 , "%s" , "" );
                 break;
             case BLANC :          
-                fprintf(fdoc2 , "%s" , " " );
+                fprintf(fdoc2 , "%s" , "" );
                 break;
             case NEWLINE :
-                fprintf(fdoc2 , "%s" , "\n@" );
+                fprintf(fdoc2 , "%s" , "" );
                 break;
             
 
